@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+ 
+    "name": "UZ booking",
+    "description": "This extension for UZ Gov",
+    "version": "1.0",
+ 
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title":  "UZ Extension",
+        "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "tabs", "<all_urls>"
+    ]    
+}

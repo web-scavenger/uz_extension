@@ -1,0 +1,16 @@
+body{
+    min-width: 200px;
+    min-height: 50px;
+    padding: 10px;
+    margin: 0;
+}
+h1{
+    margin: 0;
+    padding: 0;
+    color: #222;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+   
