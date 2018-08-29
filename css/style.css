@@ -1,16 +1,33 @@
 body{
-    min-width: 200px;
-    min-height: 50px;
+    width: 400px;
+    height: 500px;
     padding: 10px;
     margin: 0;
+    overflow: hidden;
 }
-h1{
+.ex__container{
+    width: 100%;
     margin: 0;
     padding: 0;
-    color: #222;
-    font-weight: 400;
-    font-size: 18px;
-    text-transform: uppercase;
-    text-align: center;
+    overflow: hidden;
+}
+.route_block{
+    width: 50%;
+    float: left;
+}
+.input__field{
+    width: 150px;
+    display: block;
+    position: relative;
+}
+.output__block{
+    position: absolute;
+    width: 150px;
+    padding: 0;
     margin: 0;
+    background: #222;
+}
+.output__block li{
+    width: 100%;
+    padding: 3px;
 }

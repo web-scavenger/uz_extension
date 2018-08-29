@@ -10,12 +10,26 @@
 
 <body>
     <h1>UZ servise</h1>
-    <h2 class="test_class">From: </h2>
-    <input type="text" id="from_input" placeholder="From" >
-    <ul id="from_list"></ul>
-    <h2>To: </h2>
-    <input type="text" id="to_input" placeholder="To">
-    
+    <div class="ex__container">
+        <div class="route_block">
+            <input type="text" class="input__field" id="from_input" placeholder="From">
+            <ul class="output__block" id="from_list"></ul>
+        </div>
+        <div class="route_block">
+            <input type="text" class="input__field" id="to_input" placeholder="To">
+            <ul class="output__block" id="to_list"></ul>
+        </div>
+
+    </div>
+
+    <div class="ex__container">
+        <input type="date" name="calendar" id="calendar">
+    </div>
+
+    <div class="ex__container">
+            <input type="submit" name="submit" id="check_trains">
+    </div>
+
 
 </body>
 
