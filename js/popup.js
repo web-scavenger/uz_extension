@@ -9,11 +9,13 @@ $(function () {
 
     $('#from_input').keyup(function () {
         var from = $('#from_input').val();
+        
         getLocationsList(from, '#from_list', 'from__select');
 
     })
     $('#to_input').keyup(function () {
         var to = $('#to_input').val();
+        
         getLocationsList(to, '#to_list', 'to__select');
 
     })
@@ -35,6 +37,7 @@ $(function () {
         opt.fromValue = this.getAttribute('data-train');
         $('#from_input').val(this.getAttribute('data-location'))
         $('#from_list').html('')
+        $('#from_list').removeClass('vision')
     });
 
     $(document).on("click", ".to__select", function (e) {
@@ -42,6 +45,7 @@ $(function () {
         opt.toValue = this.getAttribute('data-train');
         $('#to_input').val(this.getAttribute('data-location'))
         $('#to_list').html('')
+        $('#to_list').removeClass('vision')
     });
 
 
@@ -59,6 +63,7 @@ $(function () {
             },
             success: function (data) {
                 $(outputBlock).html('')
+                $(outputBlock).addClass('vision')
                 data.forEach(element => {
                     var li = $('<li class="' + liClass + '"></li>').text(element.title);
                     li.attr('data-location', element.title);
@@ -90,34 +95,38 @@ $(function () {
     }
 
     filterTrains = function (trainsArr) {
-
+        $('.js_trainsList--container').html('')
         trainsArr.data.list.forEach(function (element) {
             if (element.types.length > 0) {
                 pushTrainsToEx(element)
             }
         })
+
         initTrainsList()
 
     }
 
     pushTrainsToEx = function (trainObj) {
         console.log(trainObj)
+        
         var content = '';
+        content += '<div class="trains__list">'
         trainObj.types.forEach(function (element) {
             //&wagon_num=33&url=train-wagons
-            content = '<div class="trains__list" data-trainNum=' + trainObj.num +
+            content += '<div class="trains__list--class" data-trainNum=' + trainObj.num +
                 ' data-trainid=' + element.id + '> \
             <p>'+ element.title + ': <span> ' + element.places + ' </a><span></p>\
         </div>'
 
         })
+        content += '</div>'
         $('.js_trainsList--container').append(content)
 
     }
 
     initTrainsList = function () {
         console.log('was inited')
-        $('.trains__list').on('click', function () {
+        $('.trains__list--class').on('click', function () {
             openThisTrain($(this).attr('data-trainNum'), $(this).attr('data-trainId'))
         })
     }
